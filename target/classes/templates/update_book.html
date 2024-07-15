@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Update Book</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+    </head>
+    <body>
+        <h2 align="center">Update Book</h2>
+        <form th:action="@{/book/update}" th:object="${book}" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{title}"/><br/>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" th:field="*{author}"/><br/>
+
+            <label for="isbn">ISBN:</label>
+            <input type="text" id="isbn" th:field="*{isbn}"/><br/>
+
+            <input type="hidden" id="id" th:field="*{id}" >
+            
+            <button type="submit">Update</button>
+            <a href="/lms">Home</a>
+        </form>
+    </body>
+</html>
